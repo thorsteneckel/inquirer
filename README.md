@@ -1,4 +1,4 @@
-# Inquirer
+# inquirer.rb
 
 A collection of common interactive command line user interfaces. A (not yet compleded) clone of the great [Inquirer.js](https://github.com/SBoudrias/Inquirer.js) and strongly inspired by the similar [inquirer.rb](https://github.com/arlimus/inquirer.rb).
 
@@ -16,7 +16,7 @@ Started as a fork of [inquirer.rb](https://github.com/arlimus/inquirer.rb) the c
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'inquirer'
+gem 'inquirer.rb'
 ```
 
 And then execute:
@@ -25,7 +25,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install inquirer
+    $ gem install inquirer.rb
 
 ## Usage
 
