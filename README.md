@@ -59,51 +59,51 @@ Basically it's:
 
 There parameters are valid for all prompt types:
 
-- `message:` (String) The question to print.
-- `filter:` (Proc) (optional) Receive the user input and return the filtered value to be used inside the program. The value returned will be added to the answers Hash.
-- `when:` (Proc|Boolean) (optional) Receive the current user answers Hash and should return true or false depending on whether or not this question should be asked. The value can also be a simple boolean.
+- `:message` (String) The question to print.
+- `:filter` (Proc) (optional) Receive the user input and return the filtered value to be used inside the program. The value returned will be added to the answers Hash.
+- `:when` (Proc|Boolean) (optional) Receive the current user answers Hash and should return true or false depending on whether or not this question should be asked. The value can also be a simple boolean.
 
 #### Input (`type: :input`)
 
 ![:input](screenshots/input.png ":input")
 
-- `default:` (String) (optional) Default value to use if nothing is entered.
-- `validate:` (Proc) (optional) Receive the user input and should return true if the value is valid, and an error message (String) otherwise. If false is returned, a default error message is provided.
+- `:default` (String) (optional) Default value to use if nothing is entered.
+- `:validate` (Proc) (optional) Receive the user input and should return true if the value is valid, and an error message (String) otherwise. If false is returned, a default error message is provided.
 
 #### Password (`type: :password`)
 
 ![:password](screenshots/password.png ":password")
 
-- `default:` (String) (optional) Default value to use if nothing is entered.
-- `validate:` (Proc) (optional) Receive the user input and should return true if the value is valid, and an error message (String) otherwise. If false is returned, a default error message is provided.
+- `:default` (String) (optional) Default value to use if nothing is entered.
+- `:validate` (Proc) (optional) Receive the user input and should return true if the value is valid, and an error message (String) otherwise. If false is returned, a default error message is provided.
 
 #### List (`type: :list`)
 
 ![:list](screenshots/list.png ":list")
 
-- `choices:` (Array) Has to contain Hashes with the following parameters:
-  - `name:` (String) The display value
-  - `short:` (String) (optional) To display after selection
-  - `value:` (String|Symbol) To save in the answers Hash
-- `default:` (Integer|String|Symbol) (optional) Must be the choice index (Integer) in the Array or a choice `value:` parameters value (String|Symbol).
+- `:choices` (Array) Has to contain Hashes with the following parameters:
+  - `:name` (String) The display value
+  - `:short` (String) (optional) To display after selection
+  - `:value` (String|Symbol) To save in the answers Hash
+- `:default` (Integer|String|Symbol) (optional) Must be the choice index (Integer) in the Array or a choice `:value` parameters value (String|Symbol).
 
 #### Checkbox (`type: :checkbox`)
 
 ![:checkbox](screenshots/checkbox.png ":checkbox")
 
-- `choices:` (Array) Has to contain Hashes with the following parameters:
-  - `name:` (String) The display value
-  - `short:` (String) (optional) To display after selection
-  - `value:` (String|Symbol) To save in the answers Hash
-  - `checked:` (Boolean) (optional) True choices will be checked by default
-- `default:` (Array) (optional) An Array of choices `value:` parameters values (String|Symbol).
-- `validate:` (Proc) (optional) Receive the user input and should return true if the value is valid, and an error message (String) otherwise. If false is returned, a default error message is provided.
+- `:choices` (Array) Has to contain Hashes with the following parameters:
+  - `:name` (String) The display value
+  - `:short` (String) (optional) To display after selection
+  - `:value` (String|Symbol) To save in the answers Hash
+  - `:checked` (Boolean) (optional) True choices will be checked by default
+- `:default` (Array) (optional) An Array of choices `:value` parameters values (String|Symbol).
+- `:validate` (Proc) (optional) Receive the user input and should return true if the value is valid, and an error message (String) otherwise. If false is returned, a default error message is provided.
 
 #### Confirm (`type: :confirm`)
 
 ![:confirm](screenshots/confirm.png ":confirm")
 
-- `default:` (Boolean) (optional) Default value to use if nothing is entered is expected to be a boolean.
+- `:default` (Boolean) (optional) Default value to use if nothing is entered is expected to be a boolean.
 
 ## Development
 
@@ -140,9 +140,9 @@ There parameters are valid for all prompt types:
 - [x] Backend
 - [x] `:choices` (Array) parameter (InquirerJS conform)
 - [ ] `:choices` (Proc) parameter (InquirerJS conform)
-- [x] `:choices` `name:` parameter (InquirerJS conform)
-- [x] `:choices` `value:` parameter (InquirerJS conform)
-- [x] `:choices` `short:` parameter (InquirerJS conform)
+- [x] `:choices` `:name` parameter (InquirerJS conform)
+- [x] `:choices` `:value` parameter (InquirerJS conform)
+- [x] `:choices` `:short` parameter (InquirerJS conform)
 - [x] `:validate` (Proc) parameter (optional) (InquirerJS conform)
 - [ ] Tests
 
@@ -151,13 +151,13 @@ There parameters are valid for all prompt types:
 - [x] Backend
 - [x] `:choices` (Array) parameter (InquirerJS conform)
 - [ ] `:choices` (Proc) parameter (InquirerJS conform)
-- [x] `:choices` `name:` parameter (InquirerJS conform)
-- [x] `:choices` `value:` parameter (InquirerJS conform)
-- [x] `:choices` `checked:` parameter (InquirerJS conform)
-- [ ] `:choices` `disabled:` (String) parameter (InquirerJS conform)
-- [ ] `:choices` `disabled:` (Boolean) parameter (InquirerJS conform)
-- [ ] `:choices` `disabled:` (Proc) parameter (InquirerJS conform)
-- [x] `:choices` `short:` parameter
+- [x] `:choices` `:name` parameter (InquirerJS conform)
+- [x] `:choices` `:value` parameter (InquirerJS conform)
+- [x] `:choices` `:checked` parameter (InquirerJS conform)
+- [ ] `:choices` `:disabled` (String) parameter (InquirerJS conform)
+- [ ] `:choices` `:disabled` (Boolean) parameter (InquirerJS conform)
+- [ ] `:choices` `:disabled` (Proc) parameter (InquirerJS conform)
+- [x] `:choices` `:short` parameter
 - [ ] Tests
 
 ### Confirm
