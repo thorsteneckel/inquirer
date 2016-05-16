@@ -109,84 +109,84 @@ There parameters are valid for all prompt types:
 
 ### General
 
-[x] `:type` parameter (InquirerJS conform)
-[x] no `:type` parameter provided results in `:input` (InquirerJS conform)
-[x] `:name` parameter (InquirerJS conform)
-[x] `:message` (String) parameter (InquirerJS conform)
-[] `:message` (Proc) parameter (InquirerJS conform)
-[x] `:default` (String) parameter (optional) (InquirerJS conform)
-[] `:default` (Proc) parameter (optional) (InquirerJS conform)
-[x] `:when`  (Proc) parameter (optional) (InquirerJS conform)
-[x] `:when`  (Boolean) parameter (optional) (InquirerJS conform)
-[x] `:filter` (Proc) parameter (optional)
-[x] `:validate` (Proc) parameter (optional) (InquirerJS conform)
-[x] colored formatting (InquirerJS conform)
-[x] easy styling / formatting of all output components (question, result, items, password....)
+- [x] `:type` parameter (InquirerJS conform)
+- [x] no `:type` parameter provided results in `:input` (InquirerJS conform)
+- [x] `:name` parameter (InquirerJS conform)
+- [x] `:message` (String) parameter (InquirerJS conform)
+- [ ] `:message` (Proc) parameter (InquirerJS conform)
+- [x] `:default` (String) parameter (optional) (InquirerJS conform)
+- [ ] `:default` (Proc) parameter (optional) (InquirerJS conform)
+- [x] `:when`  (Proc) parameter (optional) (InquirerJS conform)
+- [x] `:when`  (Boolean) parameter (optional) (InquirerJS conform)
+- [x] `:filter` (Proc) parameter (optional)
+- [x] `:validate` (Proc) parameter (optional) (InquirerJS conform)
+- [x] colored formatting (InquirerJS conform)
+- [x] easy styling / formatting of all output components (question, result, items, password....)
 
 ### Input
 
-[x] Backend
-[x] `:validate` (Proc) parameter (optional) (InquirerJS conform)
-[] Tests
+- [x] Backend
+- [x] `:validate` (Proc) parameter (optional) (InquirerJS conform)
+- [ ] Tests
 
 ### Password
 
-[x] Backend
-[x] `:validate` (Proc) parameter (optional) (InquirerJS conform)
-[] Tests
+- [x] Backend
+- [x] `:validate` (Proc) parameter (optional) (InquirerJS conform)
+- [ ] Tests
 
 ### List
 
-[x] Backend
-[x] `:choices` (Array) parameter (InquirerJS conform)
-[] `:choices` (Proc) parameter (InquirerJS conform)
-[x] `:choices` `name:` parameter (InquirerJS conform)
-[x] `:choices` `value:` parameter (InquirerJS conform)
-[x] `:choices` `short:` parameter (InquirerJS conform)
-[x] `:validate` (Proc) parameter (optional) (InquirerJS conform)
-[] Tests
+- [x] Backend
+- [x] `:choices` (Array) parameter (InquirerJS conform)
+- [ ] `:choices` (Proc) parameter (InquirerJS conform)
+- [x] `:choices` `name:` parameter (InquirerJS conform)
+- [x] `:choices` `value:` parameter (InquirerJS conform)
+- [x] `:choices` `short:` parameter (InquirerJS conform)
+- [x] `:validate` (Proc) parameter (optional) (InquirerJS conform)
+- [ ] Tests
 
 ### Checkbox
 
-[x] Backend
-[x] `:choices` (Array) parameter (InquirerJS conform)
-[] `:choices` (Proc) parameter (InquirerJS conform)
-[x] `:choices` `name:` parameter (InquirerJS conform)
-[x] `:choices` `value:` parameter (InquirerJS conform)
-[x] `:choices` `checked:` parameter (InquirerJS conform)
-[] `:choices` `disabled:` (String) parameter (InquirerJS conform)
-[] `:choices` `disabled:` (Boolean) parameter (InquirerJS conform)
-[] `:choices` `disabled:` (Proc) parameter (InquirerJS conform)
-[x] `:choices` `short:` parameter
-[] Tests
+- [x] Backend
+- [x] `:choices` (Array) parameter (InquirerJS conform)
+- [ ] `:choices` (Proc) parameter (InquirerJS conform)
+- [x] `:choices` `name:` parameter (InquirerJS conform)
+- [x] `:choices` `value:` parameter (InquirerJS conform)
+- [x] `:choices` `checked:` parameter (InquirerJS conform)
+- [ ] `:choices` `disabled:` (String) parameter (InquirerJS conform)
+- [ ] `:choices` `disabled:` (Boolean) parameter (InquirerJS conform)
+- [ ] `:choices` `disabled:` (Proc) parameter (InquirerJS conform)
+- [x] `:choices` `short:` parameter
+- [ ] Tests
 
 ### Confirm
 
-[x] Backend
-[] Tests
+- [x] Backend
+- [ ] Tests
 
 ### Raw List
 
-[] Backend
-[] `:choices` parameter (InquirerJS conform)
-[] Tests
+- [ ] Backend
+- [ ] `:choices` parameter (InquirerJS conform)
+- [ ] Tests
 
 ### Expand
 
-[] Backend
-[] `:choices` parameter (InquirerJS conform)
-[] Tests
+- [ ] Backend
+- [ ] `:choices` parameter (InquirerJS conform)
+- [ ] Tests
 
 ### Seperator
 
-[] constructor takes a facultative String value that'll be use as the separator (InquirerJS conform)
-[] default separator `--------` (InquirerJS conform)
-[] Tests
+- [ ] constructor takes a facultative String value that'll be use as the separator (InquirerJS conform)
+- [ ] default separator `--------` (InquirerJS conform)
+- [ ] Tests
 
 ### BottomBar
 
-[] fixed text at the bottom of a free text zone (InquirerJS conform)
-[] Tests
+- [ ] fixed text at the bottom of a free text zone (InquirerJS conform)
+- [ ] Tests
 
 ## Contributing
 
