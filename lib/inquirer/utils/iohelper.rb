@@ -69,6 +69,10 @@ module IOHelper
 
   # clear the console based on the last text rendered
   def clear
+
+    # remove the trailing newline, otherwise an upper line will get eaten
+    @rendered.sub!(/\n\z/, '')
+
     # determine how many lines to move up
     lines = @rendered.scan(/\n/).length
 
