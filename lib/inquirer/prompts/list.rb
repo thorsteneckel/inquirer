@@ -37,6 +37,8 @@ module List
 
     return nil if Array(@choices).empty?
 
+    return @choices[0][:value] if @choices.size == 1
+
     if default.is_a?(String) || default.is_a?(Symbol)
       @position   = @choices.find_index { |choice| choice[:value] == default }
       @position ||= 0
