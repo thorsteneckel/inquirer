@@ -43,6 +43,8 @@ module Inquirer
           )
 
           prompt = prompt[:manipulate].call( manipulate_parameter )
+
+          next if !prompt
         end
 
         type_parameter = prompt.merge(
