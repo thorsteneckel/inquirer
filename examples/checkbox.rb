@@ -24,6 +24,14 @@ questions = [
       {
         name: 'Manfred',
       },
+      {
+        name: 'Holger',
+        when: lambda { |_args| false }
+      },
+      {
+        name: 'Tanja',
+        when: true
+      },
     ],
   },
   {

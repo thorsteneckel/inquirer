@@ -85,6 +85,7 @@ There parameters are valid for all prompt types:
   - `:name` (String) The display value
   - `:short` (String) (optional) To display after selection
   - `:value` (String|Symbol) To save in the answers Hash
+  - `:when` (Proc|Boolean) (optional) Should return true or false depending on whether or not this question should be asked. The value can also be a simple boolean.
 - `:default` (Integer|String|Symbol) (optional) Must be the choice index (Integer) in the Array or a choice `:value` parameters value (String|Symbol).
 
 #### Checkbox (`type: :checkbox`)
@@ -96,6 +97,7 @@ There parameters are valid for all prompt types:
   - `:short` (String) (optional) To display after selection
   - `:value` (String|Symbol) To save in the answers Hash
   - `:checked` (Boolean) (optional) True choices will be checked by default
+  - `:when` (Proc|Boolean) (optional) Should return true or false depending on whether or not this question should be asked. The value can also be a simple boolean.
 - `:default` (Array) (optional) An Array of choices `:value` parameters values (String|Symbol).
 - `:validate` (Proc) (optional) Receive the user input and should return true if the value is valid, and an error message (String) otherwise. If false is returned, a default error message is provided.
 
@@ -143,6 +145,8 @@ There parameters are valid for all prompt types:
 - [x] `:choices` `:name` parameter (InquirerJS conform)
 - [x] `:choices` `:value` parameter (InquirerJS conform)
 - [x] `:choices` `:short` parameter (InquirerJS conform)
+- [x] `:choices` `:when` (Proc) parameter
+- [x] `:choices` `:when` (Boolean) parameter
 - [x] `:validate` (Proc) parameter (optional) (InquirerJS conform)
 - [ ] Tests
 
@@ -154,6 +158,8 @@ There parameters are valid for all prompt types:
 - [x] `:choices` `:name` parameter (InquirerJS conform)
 - [x] `:choices` `:value` parameter (InquirerJS conform)
 - [x] `:choices` `:checked` parameter (InquirerJS conform)
+- [x] `:choices` `:when` (Proc) parameter
+- [x] `:choices` `:when` (Boolean) parameter
 - [ ] `:choices` `:disabled` (String) parameter (InquirerJS conform)
 - [ ] `:choices` `:disabled` (Boolean) parameter (InquirerJS conform)
 - [ ] `:choices` `:disabled` (Proc) parameter (InquirerJS conform)

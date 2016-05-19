@@ -18,6 +18,19 @@ module Checkbox
     @choices   = []
     opts[:choices].each { |choice|
 
+      if choice[:when].is_a?(Proc)
+
+        when_parameter = opts.merge(
+          choice: choice,
+        )
+
+        ask_choice = choice[:when].call( when_parameter )
+
+        next if !ask_choice
+      elsif [true, false].include? choice[:when]
+        next if !choice[:when]
+      end
+
       choice[:value] ||= choice[:name]
 
       if !choice[:checked] && opts[:default].is_a?(Array)
