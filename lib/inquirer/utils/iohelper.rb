@@ -65,6 +65,9 @@ module IOHelper
       print IOChar.newline * lines + @bottomline + IOChar.cursor_left * @bottomline.size + IOChar.cursor_up * lines
     end
     print @rendered
+
+    plain_last_line = plain_chars(@rendered.lines.last)
+    print IOChar.newline + IOChar.cursor_up + IOChar.cursor_right * plain_last_line.length
   end
 
   # clear the console based on the last text rendered
@@ -123,5 +126,9 @@ module IOHelper
     end
 
     result + IOChar.clear_line
+  end
+
+  def plain_chars(string)
+    string.gsub(/\e\[([;\dA-Z]+)?m?/, '')
   end
 end
