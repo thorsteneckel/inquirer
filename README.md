@@ -1,6 +1,6 @@
 # inquirer.rb
 
-A collection of common interactive command line user interfaces. A (not yet compleded) clone of the great [Inquirer.js](https://github.com/SBoudrias/Inquirer.js) and strongly inspired by the similar [inquirer.rb](https://github.com/arlimus/inquirer.rb).
+A collection of common interactive command line user interfaces. A (not yet completed) clone of the great [Inquirer.js](https://github.com/SBoudrias/Inquirer.js) and strongly inspired by the similar [inquirer.rb](https://github.com/arlimus/inquirer.rb).
 
 Started as a fork of [inquirer.rb](https://github.com/arlimus/inquirer.rb) the changes become to fundamental to keep it that way.
 
