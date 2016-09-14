@@ -1,9 +1,11 @@
 require 'inquirer/version'
 require 'inquirer/utils/iohelper'
 require 'inquirer/prompts/checkbox'
+require 'inquirer/prompts/checkbox_filterable'
 require 'inquirer/prompts/confirm'
 require 'inquirer/prompts/input'
 require 'inquirer/prompts/list'
+require 'inquirer/prompts/list_filterable'
 require 'inquirer/prompts/password'
 
 module Inquirer
@@ -52,7 +54,7 @@ module Inquirer
           repeat_counter: repeat_counter,
         )
 
-        object = Kernel.const_get(prompt[:type].to_s.capitalize)
+        object = Kernel.const_get(prompt[:type].to_s.split('_').collect(&:capitalize).join)
         answer = object.prompt(type_parameter)
 
         if prompt[:filter] && prompt[:filter].is_a?(Proc)

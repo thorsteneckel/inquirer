@@ -88,9 +88,33 @@ There parameters are valid for all prompt types:
   - `:when` (Proc|Boolean) (optional) Should return true or false depending on whether or not this question should be asked. The value can also be a simple boolean.
 - `:default` (Integer|String|Symbol) (optional) Must be the choice index (Integer) in the Array or a choice `:value` parameters value (String|Symbol).
 
+#### List filterable (`type: :list_filterable`)
+
+![:list_filterable](screenshots/list_filterable.png ":list_filterable")
+
+- `:choices` (Array) Has to contain Hashes with the following parameters:
+  - `:name` (String) The display value
+  - `:short` (String) (optional) To display after selection
+  - `:value` (String|Symbol) To save in the answers Hash
+  - `:when` (Proc|Boolean) (optional) Should return true or false depending on whether or not this question should be asked. The value can also be a simple boolean.
+- `:default` (Integer|String|Symbol) (optional) Must be the choice index (Integer) in the Array or a choice `:value` parameters value (String|Symbol).
+
 #### Checkbox (`type: :checkbox`)
 
 ![:checkbox](screenshots/checkbox.png ":checkbox")
+
+- `:choices` (Array) Has to contain Hashes with the following parameters:
+  - `:name` (String) The display value
+  - `:short` (String) (optional) To display after selection
+  - `:value` (String|Symbol) To save in the answers Hash
+  - `:checked` (Boolean) (optional) True choices will be checked by default
+  - `:when` (Proc|Boolean) (optional) Should return true or false depending on whether or not this question should be asked. The value can also be a simple boolean.
+- `:default` (Array) (optional) An Array of choices `:value` parameters values (String|Symbol).
+- `:validate` (Proc) (optional) Receive the user input and should return true if the value is valid, and an error message (String) otherwise. If false is returned, a default error message is provided.
+
+#### Checkbox filterable (`type: :checkbox_filterable`)
+
+![:checkbox_filterable](screenshots/checkbox_filterable.png ":checkbox_filterable")
 
 - `:choices` (Array) Has to contain Hashes with the following parameters:
   - `:name` (String) The display value
@@ -129,13 +153,13 @@ There parameters are valid for all prompt types:
 
 - [x] Backend
 - [x] `:validate` (Proc) parameter (optional) (InquirerJS conform)
-- [ ] Tests
+- [x] Tests
 
 ### Password
 
 - [x] Backend
 - [x] `:validate` (Proc) parameter (optional) (InquirerJS conform)
-- [ ] Tests
+- [x] Tests
 
 ### List
 
@@ -148,7 +172,20 @@ There parameters are valid for all prompt types:
 - [x] `:choices` `:when` (Proc) parameter
 - [x] `:choices` `:when` (Boolean) parameter
 - [x] `:validate` (Proc) parameter (optional) (InquirerJS conform)
-- [ ] Tests
+- [x] Tests
+
+### List filterable
+
+- [x] Backend
+- [x] `:choices` (Array) parameter (InquirerJS conform)
+- [ ] `:choices` (Proc) parameter (InquirerJS conform)
+- [x] `:choices` `:name` parameter (InquirerJS conform)
+- [x] `:choices` `:value` parameter (InquirerJS conform)
+- [x] `:choices` `:short` parameter (InquirerJS conform)
+- [x] `:choices` `:when` (Proc) parameter
+- [x] `:choices` `:when` (Boolean) parameter
+- [x] `:validate` (Proc) parameter (optional) (InquirerJS conform)
+- [x] Tests
 
 ### Checkbox
 
@@ -164,12 +201,28 @@ There parameters are valid for all prompt types:
 - [ ] `:choices` `:disabled` (Boolean) parameter (InquirerJS conform)
 - [ ] `:choices` `:disabled` (Proc) parameter (InquirerJS conform)
 - [x] `:choices` `:short` parameter
-- [ ] Tests
+- [x] Tests
+
+### Checkbox filterable
+
+- [x] Backend
+- [x] `:choices` (Array) parameter (InquirerJS conform)
+- [ ] `:choices` (Proc) parameter (InquirerJS conform)
+- [x] `:choices` `:name` parameter (InquirerJS conform)
+- [x] `:choices` `:value` parameter (InquirerJS conform)
+- [x] `:choices` `:checked` parameter (InquirerJS conform)
+- [x] `:choices` `:when` (Proc) parameter
+- [x] `:choices` `:when` (Boolean) parameter
+- [ ] `:choices` `:disabled` (String) parameter (InquirerJS conform)
+- [ ] `:choices` `:disabled` (Boolean) parameter (InquirerJS conform)
+- [ ] `:choices` `:disabled` (Proc) parameter (InquirerJS conform)
+- [x] `:choices` `:short` parameter
+- [x] Tests
 
 ### Confirm
 
 - [x] Backend
-- [ ] Tests
+- [x] Tests
 
 ### Raw List
 
@@ -193,6 +246,12 @@ There parameters are valid for all prompt types:
 
 - [ ] fixed text at the bottom of a free text zone (InquirerJS conform)
 - [ ] Tests
+
+## Development
+
+Run `rake spec` to run the tests.
+
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 

@@ -18,8 +18,12 @@ module IOChar
     "\004" => 'ctrl-d',
   }
 
-  def char_to_key char
+  def char_to_key(char)
     KEYS.fetch char, char
+  end
+
+  def key_to_char(key)
+    KEYS.invert.fetch key, key
   end
 
   def newline;         "\n"    end

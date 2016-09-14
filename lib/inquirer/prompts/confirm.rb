@@ -23,7 +23,7 @@ module Confirm
       elsif key.casecmp( Inquirer::Style::Confirm.option_false[0] ) == 0
         @value = false
         false
-      elsif key == 'return' and !@default.nil?
+      elsif key == 'return' && !@default.nil?
         @value = @default
         false
       else
@@ -64,19 +64,21 @@ module Confirm
 
   def render_result
 
-    response = nil
-    if @value
-      response = Inquirer::Style::Confirm.option_true
-    else
-      response = Inquirer::Style::Confirm.option_false
-    end
-
     # start with the question prefix
     result = Inquirer::Style.question_prefix
 
     result += Inquirer::Style::Confirm.question % @question
 
-    result += Inquirer::Style::Confirm.response % response
+    response = nil
+    if !@value.nil?
+      if @value
+        response = Inquirer::Style::Confirm.option_true
+      else
+        response = Inquirer::Style::Confirm.option_false
+      end
+
+      result += Inquirer::Style::Confirm.response % response
+    end
 
     result += IOChar.newline
 

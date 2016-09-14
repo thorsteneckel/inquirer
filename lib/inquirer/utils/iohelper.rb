@@ -54,20 +54,11 @@ module IOHelper
   end
 
   # render a text to the prompt
-  def render prompt, bottomline = nil
+  def render(prompt, bottomline = nil)
     @rendered   = wrap(prompt)
     @bottomline = bottomline
 
-    # determine how many lines to move up
-    lines = @rendered.scan(/\n/).size + 1
-
-    if @bottomline
-      print IOChar.newline * lines + @bottomline + IOChar.cursor_left * @bottomline.size + IOChar.cursor_up * lines
-    end
-    print @rendered
-
-    plain_last_line = plain_chars(@rendered.lines.last)
-    print IOChar.newline + IOChar.cursor_up + IOChar.cursor_right * plain_last_line.length
+    print rendered_output
   end
 
   # clear the console based on the last text rendered
@@ -87,7 +78,7 @@ module IOHelper
     print IOChar.cursor_down + IOChar.carriage_return + IOChar.clear_line + IOChar.cursor_up + IOChar.clear_line + IOChar.carriage_return + ( IOChar.cursor_up + IOChar.clear_line ) * lines + IOChar.clear_line
   end
 
-  # hides the cursor and ensure the curso be visible at the end
+  # hides the cursor and ensure the cursor be visible at the end
   def without_cursor
     # tell the terminal to hide the cursor
     print `tput civis`
@@ -130,5 +121,24 @@ module IOHelper
 
   def plain_chars(string)
     string.gsub(/\e\[([;\dA-Z]+)?m?/, '')
+  end
+
+  private
+
+  def rendered_output
+
+    output = ''
+
+    if @bottomline
+      # determine how many lines to move up
+      lines   = @rendered.scan(/\n/).size + 1
+      output += IOChar.newline * lines + @bottomline + IOChar.cursor_left * @bottomline.size + IOChar.cursor_up * lines
+    end
+    output += @rendered
+
+    plain_last_line = plain_chars(@rendered.lines.last)
+    output += IOChar.newline + IOChar.cursor_up + IOChar.cursor_right * plain_last_line.length
+
+    output
   end
 end

@@ -90,11 +90,7 @@ module Checkbox
         render_prompt
 
         # we are done if the user hits return
-        if @error_message or key != 'return'
-          true
-        else
-          false
-        end
+        @error_message || key != 'return'
       end
     end
 
