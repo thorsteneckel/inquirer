@@ -6,7 +6,7 @@ module Inquirer
     class CheckboxFilterable < Inquirer::Style::Checkbox
 
       @@filter        = '%s'
-      @@filter_prefix = @@color.cyan('>') + ' '
+      @@filter_prefix = Rainbow('>').cyan + ' '
 
       self.activate_getter_setter
     end

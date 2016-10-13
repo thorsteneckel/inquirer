@@ -6,7 +6,7 @@ module Inquirer
     class List < Inquirer::Style
 
       @@item          = "%s#{IOChar.newline}"
-      @@selected_item = @@color.cyan('%s') + IOChar.newline
+      @@selected_item = Rainbow('%s').cyan + IOChar.newline
 
       @@selection_help = '(Use arrow keys)'
 

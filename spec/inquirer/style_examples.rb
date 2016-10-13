@@ -1,14 +1,6 @@
 RSpec.shared_examples "a Inquirer::Style" do
   let(:style) { described_class }
 
-  it 'responds to color' do
-    expect(style).to respond_to('color')
-  end
-
-  it 'color is an Term::ANSIColor instance' do
-    expect(style.color).to be_kind_of(Term::ANSIColor)
-  end
-
   it 'responds to question_prefix' do
     expect(style).to respond_to('question_prefix')
   end

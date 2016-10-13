@@ -1,28 +1,26 @@
 # encoding: utf-8
-require 'term/ansicolor'
+require 'rainbow'
 
 module Inquirer
   class Style
 
-    @@color = Term::ANSIColor
-
-    @@question_prefix = @@color.green('?') + ' '
+    @@question_prefix = Rainbow('?').green + ' '
     @@seperator       = '--------'
 
     @@question = '%s '
-    @@response = @@color.cyan('%s')
+    @@response = Rainbow('%s').cyan
 
-    @@selector     = @@color.cyan('‣')
-    @@checkbox_on  = @@color.green('◉')
+    @@selector     = Rainbow('‣').cyan
+    @@checkbox_on  = Rainbow('◉').green
     @@checkbox_off = '◯'
 
     @@pagiator_text = '(Move up and down to reveal more choices)'
 
-    @@error_message               = @@color.red('>>') + ' %s'
+    @@error_message               = Rainbow('>>').red + ' %s'
     @@error_message_invalid_value = 'The entered value is not valid'
 
-    @@endless_repeat = @@color.yellow('#%s')
-    @@limited_repeat = @@color.yellow('#%s of %s')
+    @@endless_repeat = Rainbow('#%s').yellow
+    @@limited_repeat = Rainbow('#%s of %s').yellow
 
     # http://blog.marc-seeger.de/2011/04/06/attr_reader-for-class-variables-in-ruby/
     def self.activate_getter_setter
