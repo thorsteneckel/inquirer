@@ -397,4 +397,61 @@ RSpec.shared_examples "a Inquirer::Prompts::Checkbox" do
     expect(IOHelper.output).to eq("\e[32m?\e[0m Which brand is your religion? \e[36mStarbugs\e[0m\n\e[0K\n\e[A")
     expect(IOHelper.output_plain).to eq("? Which brand is your religion? Starbugs\n\n")
   end
+
+  it "removes selections with escape key" do
+
+    IOHelper.keys = [
+      IOChar.key_to_char('escape'),
+      IOChar.key_to_char('space'),
+      IOChar.key_to_char('return')
+    ]
+
+    response = CheckboxFilterable.prompt(
+      message: 'Which brand is your religion?',
+      choices: [
+        {
+          name:  'Apple',
+          value: :Apple,
+        },
+        {
+          name:    'Microsoft',
+          value:   :Microsoft,
+          checked: true,
+        },
+        {
+          name:    'Google',
+          value:   :Google,
+          checked: true,
+        },
+        {
+          name: 'Starbugs',
+          value: :Starbugs,
+        },
+        {
+          name: 'McDonalds',
+          value: :McDonalds,
+        },
+        {
+          name: 'Samsung',
+          value: :Samsung,
+        },
+        {
+          name: 'RedBull',
+          value: :RedBull,
+        },
+        {
+          name: 'Disney',
+          value: :Disney,
+        },
+        {
+          name: 'Weber',
+          value: :Weber,
+        },
+      ]
+    )
+
+    expect(response).to eq([:Apple])
+    expect(IOHelper.output).to eq("\e[32m?\e[0m Which brand is your religion? \e[36mApple\e[0m\n\e[0K\n\e[A")
+    expect(IOHelper.output_plain).to eq("? Which brand is your religion? Apple\n\n")
+  end
 end

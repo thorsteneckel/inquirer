@@ -66,6 +66,11 @@ module Checkbox
           @position = (@position + 1) % @choices.length
         when 'space'
           @choices[@position][:checked] = !@choices[@position][:checked]
+        when 'escape'
+          @choices.map! { |choice|
+            choice[:checked] = false
+            choice
+          }
         when 'return'
           if opts[:validate] and opts[:validate].is_a?(Proc)
 

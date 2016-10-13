@@ -132,7 +132,15 @@ module CheckboxFilterable
 
         check_no_match
       when 'escape'
-        @filter = ''
+
+        if @filter == ''
+          @choices.map! { |choice|
+            choice[:checked] = false
+            choice
+          }
+        else
+          @filter = ''
+        end
 
         filter_choices
       else
