@@ -131,6 +131,10 @@ module CheckboxFilterable
         end
 
         check_no_match
+      when 'escape'
+        @filter = ''
+
+        filter_choices
       else
         @filter = @filter.insert(@filter.length - cursor_position, char)
 

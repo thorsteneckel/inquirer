@@ -103,6 +103,10 @@ module ListFilterable
         end
 
         check_no_match
+      when 'escape'
+        @filter = ''
+
+        filter_choices
       else
 
         if !['return'].include?(key)
