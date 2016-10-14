@@ -2,6 +2,7 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'rspec'
 require 'inquirer'
 require 'simplecov'
+require 'codecov'
 require 'codeclimate-test-reporter'
 
 require 'inquirer/prompts/checkbox_examples'
@@ -12,21 +13,10 @@ require 'inquirer/style/input_examples'
 require 'inquirer/style/list_examples'
 require 'inquirer/style_examples'
 
-# Check for coverage stuffs
-formatters = []
-if ENV['CODECLIMATE_REPO_TOKEN']
-  require 'codeclimate-test-reporter'
-  formatters << CodeClimate::TestReporter::Formatter
-end
-
-if ENV['CODECOV_TOKEN']
-  require 'codecov'
-  formatters << SimpleCov::Formatter::Codecov
-end
-
-unless formatters.empty?
-  SimpleCov.formatters = formatters
-end
+SimpleCov.formatters = [
+  CodeClimate::TestReporter::Formatter,
+  SimpleCov::Formatter::Codecov
+]
 
 SimpleCov.start do
   # Don't get coverage on the test cases themselves.
