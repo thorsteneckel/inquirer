@@ -2,6 +2,7 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'rspec'
 require 'inquirer'
 require 'simplecov'
+require 'codeclimate-test-reporter'
 
 require 'inquirer/prompts/checkbox_examples'
 require 'inquirer/prompts/list_examples'
