@@ -1,8 +1,8 @@
 language: ruby
 rvm:
   - 2.2
-  - jruby
-  - rbx-2
+  - 2.1
+  - 1.9
 before_install:
   - gem update --system
   - gem --version
