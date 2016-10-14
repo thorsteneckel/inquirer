@@ -1,22 +1,7 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'rspec'
-require 'inquirer'
 require 'simplecov'
 require 'codecov'
 require 'codeclimate-test-reporter'
-
-require 'inquirer/prompts/checkbox_examples'
-require 'inquirer/prompts/list_examples'
-require 'inquirer/style/checkbox_examples'
-require 'inquirer/style/filterable_examples'
-require 'inquirer/style/input_examples'
-require 'inquirer/style/list_examples'
-require 'inquirer/style_examples'
-
-SimpleCov.formatters = [
-  CodeClimate::TestReporter::Formatter,
-  SimpleCov::Formatter::Codecov
-]
 
 SimpleCov.start do
   # Don't get coverage on the test cases themselves.
@@ -25,6 +10,18 @@ SimpleCov.start do
   # Codecov doesn't automatically ignore vendored files.
   add_filter '/vendor/'
 end
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
+
+CodeClimate::TestReporter.start
+
+require 'inquirer'
+require 'inquirer/prompts/checkbox_examples'
+require 'inquirer/prompts/list_examples'
+require 'inquirer/style/checkbox_examples'
+require 'inquirer/style/filterable_examples'
+require 'inquirer/style/input_examples'
+require 'inquirer/style/list_examples'
+require 'inquirer/style_examples'
 
 module IOHelper
   extend self
