@@ -1,5 +1,10 @@
 # inquirer.rb
 
+[![Build Status](https://travis-ci.org/thorsteneckel/inquirer.svg?branch=master)](https://travis-ci.org/thorsteneckel/inquirer)
+[![codecov](https://codecov.io/gh/thorsteneckel/inquirer/branch/master/graph/badge.svg)](https://codecov.io/gh/thorsteneckel/inquirer)
+[![Code Climate](https://codeclimate.com/github/thorsteneckel/inquirer/badges/gpa.svg)](https://codeclimate.com/github/thorsteneckel/inquirer)
+[![Gem](https://img.shields.io/gem/v/inquirer.rb.svg?maxAge=2592000)]()
+
 A collection of common interactive command line user interfaces. A (not yet completed) clone of the great [Inquirer.js](https://github.com/SBoudrias/Inquirer.js) and strongly inspired by the similar [inquirer.rb](https://github.com/arlimus/inquirer.rb).
 
 Started as a fork of [inquirer.rb](https://github.com/arlimus/inquirer.rb) the changes become to fundamental to keep it that way.
