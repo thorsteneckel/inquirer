@@ -1,12 +1,7 @@
 require 'spec_helper'
 
 describe Confirm do
-
-  before :each do
-    IOHelper.winsize = [10, 2000]
-    IOHelper.output = ''
-    IOHelper.keys   = nil
-  end
+  include IOHelper::SpecHelpers::All
 
   it "accepts yes answers as true" do
 

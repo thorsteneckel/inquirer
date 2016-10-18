@@ -3,12 +3,6 @@ require 'spec_helper'
 describe ListFilterable do
   it_behaves_like "a Inquirer::Prompts::List"
 
-  before :each do
-    IOHelper.winsize = [10, 2000]
-    IOHelper.output  = ''
-    IOHelper.keys    = nil
-  end
-
   it "filters the value via key input" do
 
     IOHelper.keys = [

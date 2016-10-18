@@ -1,4 +1,6 @@
 RSpec.shared_examples "a Inquirer::Prompts::List" do
+  include IOHelper::SpecHelpers::All
+
   let(:list) { described_class }
 
   it "returns value instead of name of choice if present" do

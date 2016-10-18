@@ -1,13 +1,9 @@
 require 'spec_helper'
 
 describe CheckboxFilterable do
-  it_behaves_like "a Inquirer::Prompts::Checkbox"
+  include IOHelper::SpecHelpers::All
 
-  before :each do
-    IOHelper.winsize = [10, 2000]
-    IOHelper.output  = ''
-    IOHelper.keys    = nil
-  end
+  it_behaves_like "a Inquirer::Prompts::Checkbox"
 
   it "filters the value via key input" do
 
