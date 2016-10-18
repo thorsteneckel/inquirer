@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Confirm do
-  include IOHelper::SpecHelpers::All
+  include Inquirer::SpecHelpers::All
 
   it "accepts yes answers as true" do
 

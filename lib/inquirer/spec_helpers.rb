@@ -29,8 +29,10 @@ module IOHelper
     @winsize = [10, 2000]
     @keys    = nil
   end
+end
 
-  def use_iohelper(describe_block, opts)
+module Inquirer
+  def use_inquirer(describe_block, opts)
     describe_block.before opts[:with] do
       IOHelper.reset
     end
@@ -42,10 +44,10 @@ module IOHelper
 
   # Module SpecHelpers
   module SpecHelpers
-    include ::IOHelper
+    include ::Inquirer
 
     def self.extended(example_group)
-      example_group.use_iohelper(example_group, with: :each)
+      example_group.use_inquirer(example_group, with: :each)
     end
 
     def self.included(example_group)
@@ -54,10 +56,10 @@ module IOHelper
 
     # Module All
     module All
-      include ::IOHelper
+      include ::Inquirer
 
       def self.extended(example_group)
-        example_group.use_iohelper(example_group, with: :all)
+        example_group.use_inquirer(example_group, with: :all)
       end
 
       def self.included(example_group)

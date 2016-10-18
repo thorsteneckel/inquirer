@@ -1,5 +1,5 @@
 RSpec.shared_examples "a Inquirer::Prompts::List" do
-  include IOHelper::SpecHelpers::All
+  include Inquirer::SpecHelpers::All
 
   let(:list) { described_class }
 

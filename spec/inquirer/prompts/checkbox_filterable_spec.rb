@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe CheckboxFilterable do
-  include IOHelper::SpecHelpers::All
+  include Inquirer::SpecHelpers::All
 
   it_behaves_like "a Inquirer::Prompts::Checkbox"
 

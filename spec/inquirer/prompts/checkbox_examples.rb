@@ -1,5 +1,5 @@
 RSpec.shared_examples "a Inquirer::Prompts::Checkbox" do
-  include IOHelper::SpecHelpers::All
+  include Inquirer::SpecHelpers::All
 
   let(:checkbox) { described_class }
 
